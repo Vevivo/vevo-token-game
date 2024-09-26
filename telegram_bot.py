@@ -13,7 +13,7 @@ async def start(update: Update, context) -> None:
     keyboard = [
         [InlineKeyboardButton(
             "VEVO Oyununu Aç", 
-            web_app=WebAppInfo(url="https://senin-web-siten.com"))]
+            web_app=WebAppInfo(url="https://vevivo.github.io/vevo-token-game/"))]  # GitHub Pages URL'nizi buraya ekleyin
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 

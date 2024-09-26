@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,27 +10,69 @@ body {
 
 .container {
     text-align: center;
+    position: relative;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.game {
+    position: relative;
 }
 
 .vevo-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    position: relative;
     width: 150px;
     height: 150px;
-    cursor: pointer;
-    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vevo-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.vevo-logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vevo-button:hover .vevo-logo {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .game p {
     font-size: 18px;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 .token-display {
     position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 24px;
     font-weight: bold;
-    color: green;
-    animation: fade-out 1s forwards; /* 1 saniye içinde kaybolacak */
+    color: #28a745;
     opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.token-display.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
 }
 
 @keyframes fade-out {
@@ -40,6 +82,6 @@ body {
     }
     100% {
         opacity: 0;
-        transform: translateY(-20px); /* Yukarı doğru hareket ederek kaybolur */
+        transform: translateY(-20px);
     }
 }
