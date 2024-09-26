@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+}
+
+.vevo-button {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.game p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.token-display {
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+    animation: fade-out 1s forwards; /* 1 saniye içinde kaybolacak */
+    opacity: 0;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px); /* Yukarı doğru hareket ederek kaybolur */
+    }
+}
