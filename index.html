@@ -3,18 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VEVO Token Kazan</title>
+    <title>Earn VEVO Tokens</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.0/dist/ethers.umd.min.js"></script>
 </head>
 <body>
+    <!-- Top left: Total Balance -->
+    <div class="balance-display">
+        Total Balance: <span id="total-balance">0</span> VEVO
+    </div>
+
     <div class="container">
-        <h1>VEVO Token Kazan!</h1>
+        <h1>Earn VEVO Tokens!</h1>
+        
+        <!-- VEVO button -->
         <div class="game">
-            <div id="token-display" class="token-display"></div> <!-- Token miktarı gösterilecek alan -->
+            <div id="token-display" class="token-display"></div>
             <button id="vevo-button" class="vevo-button">
                 <img src="vevobutton.png" alt="VEVO Button" class="vevo-logo">
             </button>
-            <p>Toplam Token Kazandınız: <span id="token-counter">0</span> VEVO</p>
+            <p>Tokens Earned: <span id="token-counter">0</span> VEVO</p>
+        </div>
+
+        <!-- Claim and Connect Wallet buttons -->
+        <div class="claim-section">
+            <button id="connect-wallet" class="wallet-button">Connect Wallet</button>
+            <button id="claim-tokens" class="claim-button">Claim Tokens</button>
         </div>
     </div>
 
