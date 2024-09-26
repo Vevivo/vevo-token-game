@@ -1,3 +1,9 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
@@ -5,7 +11,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #000000; /* Arka plan rengini siyah yap */
+    color: #ffffff; /* Tüm yazıları beyaz yap */
 }
 
 .container {
@@ -14,7 +21,7 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #ffffff; /* Başlık beyaz olacak */
     margin-bottom: 20px;
 }
 
@@ -56,6 +63,7 @@ h1 {
     font-size: 18px;
     font-weight: bold;
     margin-top: 20px;
+    color: #ffffff; /* Yazılar beyaz olacak */
 }
 
 .token-display {
@@ -73,6 +81,18 @@ h1 {
 .token-display.show {
     opacity: 1;
     transform: translateX(-50%) translateY(-10px);
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-10px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.vevo-button:active {
+    animation: bounce 0.5s; /* Butona tıklayınca küçük zıplama */
 }
 
 @keyframes fade-out {
