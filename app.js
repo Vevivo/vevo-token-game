@@ -9,12 +9,12 @@ const balanceDisplayElement = document.getElementById('total-balance');
 let signer;
 let userAddress;
 
-// Function to connect the user's Metamask wallet
+// Kullanıcının Metamask cüzdanını bağlama fonksiyonu
 async function connectWallet() {
     if (window.ethereum) {
         try {
             const provider = new ethers.providers.Web3Provider(window.ethereum);
-            await provider.send("eth_requestAccounts", []); // Connect to Metamask wallet
+            await provider.send("eth_requestAccounts", []); // Metamask cüzdanı bağlantısı
             signer = provider.getSigner();
             userAddress = await signer.getAddress();
             alert('Wallet successfully connected!');
@@ -26,34 +26,38 @@ async function connectWallet() {
     }
 }
 
-// VEVO token earning function
+// VEVO token kazandırma fonksiyonu
 vevoButton.addEventListener('click', () => {
     tokenCounter++;
     tokenCounterElement.textContent = tokenCounter;
 
-    // Show a brief animation to display the earned token
+    // Token kazandığını göstermek için kısa bir animasyon
     tokenDisplay.textContent = `+1 VEVO`;
+    tokenDisplay.classList.remove('hide'); // Yazıyı görünür yap
     tokenDisplay.classList.add('show');
+
+    // 1 saniye sonra yazıyı kaybet
     setTimeout(() => {
         tokenDisplay.classList.remove('show');
-    }, 1000);
+        tokenDisplay.classList.add('hide');
+    }, 1000); // 1 saniye sonra kaybolsun
 });
 
-// Function to claim tokens
+// Tokenleri claim etme fonksiyonu
 claimTokensButton.addEventListener('click', () => {
     if (!userAddress) {
         alert("Please connect your wallet first.");
         return;
     }
     
-    // Claim earned VEVO tokens
+    // Kazanılan VEVO tokenlerini claim et
     totalBalance += tokenCounter;
     balanceDisplayElement.textContent = totalBalance;
 
     alert(`${tokenCounter} VEVO tokens will be transferred to your wallet.`);
-    tokenCounter = 0; // Reset token counter
+    tokenCounter = 0; // Token sayacını sıfırla
     tokenCounterElement.textContent = tokenCounter;
 });
 
-// Connect wallet button event listener
+// Metamask'ı bağla butonuna tıklayınca Metamask'ı bağlama
 connectWalletButton.addEventListener('click', connectWallet);
