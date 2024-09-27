@@ -3,6 +3,11 @@ let totalBalance = 0;
 const tokenCounterElement = document.getElementById('token-counter');
 const vevoButton = document.getElementById('vevo-button');
 const tokenDisplay = document.getElementById('token-display');
+const dymLogo = document.createElement('img'); // Dym logosu için img öğesi oluştur
+dymLogo.src = 'dym.png'; // dym.png dosyasını kaynak olarak ayarla
+dymLogo.classList.add('dym-logo'); // CSS'deki dym-logo sınıfını ekle
+vevoButton.appendChild(dymLogo); // Dym logosunu butona ekle
+
 const connectWalletButton = document.getElementById('connect-wallet');
 const claimTokensButton = document.getElementById('claim-tokens');
 const balanceDisplayElement = document.getElementById('total-balance');
@@ -41,6 +46,16 @@ vevoButton.addEventListener('click', () => {
         tokenDisplay.classList.remove('show');
         tokenDisplay.classList.add('hide');
     }, 1000); // 1 saniye sonra kaybolsun
+
+    // Dym logosunu göster
+    dymLogo.classList.add('show');
+    dymLogo.classList.remove('hide');
+
+    // 2 saniye sonra Dym logosunu kaybet
+    setTimeout(() => {
+        dymLogo.classList.remove('show');
+        dymLogo.classList.add('hide');
+    }, 2000); // 2 saniye sonra kaybolsun
 });
 
 // Tokenleri claim etme fonksiyonu
