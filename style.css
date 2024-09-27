@@ -62,7 +62,7 @@ h1 {
     transform: translateX(-50%);
     font-size: 2rem;
     font-weight: bold;
-    color: #28a745; /* Yeşil renk */
+    color: #f0f6f2; /* Yeşil renk */
     opacity: 0;
     transition: opacity 0.5s, transform 0.5s;
 }
@@ -84,8 +84,8 @@ h1 {
     right: 0;
     bottom: 0;
     margin: auto;
-    width: 100%;
-    height: 100%;
+    width: 30%; /* Genişliği opsiyonel olarak ayarlayabilirsiniz (örn: 300px veya %50) */
+    height: auto; /* Yükseklik genişliğe göre orantılı ayarlanır */
     opacity: 0;
     transition: opacity 0.2s;
 }

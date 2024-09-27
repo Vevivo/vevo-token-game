@@ -3,9 +3,16 @@ let totalBalance = 0;
 const tokenCounterElement = document.getElementById('token-counter');
 const vevoButton = document.getElementById('vevo-button');
 const tokenDisplay = document.getElementById('token-display');
-const dymLogo = document.createElement('img'); // Dym logosu için img öğesi oluştur
+
+// Dym logosu için img öğesi oluştur
+const dymLogo = document.createElement('img');
 dymLogo.src = 'dym.png'; // dym.png dosyasını kaynak olarak ayarla
 dymLogo.classList.add('dym-logo'); // CSS'deki dym-logo sınıfını ekle
+
+// Dym logosunun boyutunu dinamik olarak ayarla (opsiyonel)
+dymLogo.style.width = '40%'; // Genişliği yüzde bazlı ya da '300px' gibi sabit bir değer yapabilirsiniz
+dymLogo.style.height = 'auto'; // Yükseklik genişliğe göre orantılı ayarlanacak
+
 vevoButton.appendChild(dymLogo); // Dym logosunu butona ekle
 
 const connectWalletButton = document.getElementById('connect-wallet');
